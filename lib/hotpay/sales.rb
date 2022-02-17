@@ -3,7 +3,7 @@ require_relative 'request.rb'
 module Hotpay
   class Sales < Request
     def initialize
-      host = "#{get_contextext}.hotmart.com"
+      host = "#{get_context}.hotmart.com"
       super(host)
 
       @path = '/payments/api/v1/sales/users'
@@ -21,7 +21,7 @@ module Hotpay
 
     private
 
-    def get_contextext
+    def get_context
       Hotpay.sandbox ? 'sandbox' : 'developers'
     end
   end
